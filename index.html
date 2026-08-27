@@ -186,6 +186,18 @@
             font-weight: 700;
         }
 
+        /* CREDITS SYNC STYLE */
+        .credits-tag {
+            font-family: 'Syncopate', sans-serif;
+            font-weight: 700;
+            color: #32cd32;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-top: 15px;
+            text-shadow: 0 0 10px rgba(50, 205, 50, 0.6);
+            text-transform: uppercase;
+        }
+
         footer {
             margin-top: auto;
             padding: 30px;
@@ -196,6 +208,10 @@
             background: #030703;
             border-top: 1px solid rgba(50, 205, 50, 0.1);
             letter-spacing: 2px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
         }
     </style>
 </head>
@@ -259,7 +275,6 @@
         </div>
     </main>
 
-    <!-- Скрытый плеер с автостартом по первому клику -->
     <audio id="bgMusic" loop src="track.mp3"></audio>
 
     <script>
@@ -270,7 +285,9 @@
     </script>
 
     <footer>
-        &copy; 2026 GROVE STREET FAMILY. O.G. STATUS ONLY.
+        <div>&copy; 2026 GROVE STREET FAMILY. O.G. STATUS ONLY.</div>
+        <!-- МЕТКА АВТОРА DIMKA -->
+        <div class="credits-tag">DEVELOPED BY DIMKA</div>
     </footer>
 
 </body>
