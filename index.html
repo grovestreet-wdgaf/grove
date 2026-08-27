@@ -278,14 +278,45 @@
     </main>
 
     <!-- Упрощенный стандартный плеер без глючных скриптов -->
-<audio id="bgMusic" loop src="track.mp3"></audio>
+    <!-- Музыкальный блок с кнопкой управления -->
+    <div class="audio-player">
+        <span style="font-size: 0.8rem; color: #809080; font-weight: bold; font-family: 'Syncopate', sans-serif; margin-right: 5px;">VIBE:</span>
+        <button class="player-btn" id="musicBtn" style="background: #228b22;">PLAY</button>
+        <audio id="bgMusic" loop src="track.mp3"></audio>
+    </div>
 
-<script>
-    document.addEventListener('click', function() {
-        const audio = document.getElementById('bgMusic');
-        audio.play().catch(function(e) { console.log(e); });
-    }, { once: true });
-</script>
+    <script>
+        const music = document.getElementById('bgMusic');
+        const btn = document.getElementById('musicBtn');
+        let started = false;
+
+        // 1. Автостарт при первом клике в ЛЮБОМ месте сайта
+        document.addEventListener('click', function() {
+            if (!started) {
+                music.play().then(() => {
+                    btn.textContent = 'MUTE';
+                    btn.style.background = '#8b2222';
+                    started = true;
+                }).catch(e => console.log("Браузер заблокировал старт"));
+            }
+        }, { once: true });
+
+        // 2. Ручной контроль по кнопке (вкл/выкл в любой момент)
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation(); // чтобы не срабатывал первый клик по документу
+            if (music.paused) {
+                music.play();
+                btn.textContent = 'MUTE';
+                btn.style.background = '#8b2222';
+                started = true;
+            } else {
+                music.pause();
+                btn.textContent = 'PLAY';
+                btn.style.background = '#228b22';
+            }
+        });
+    </script>
+
 
 
     <footer>
