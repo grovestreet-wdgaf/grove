@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GROVE STREET FAMILIES - HOMIES ONLY</title>
-    <!-- Подключаем стильный, дорогой и читаемый шрифт Montserrat и Syncopate -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #050a05;
             color: #ffffff;
-            /* Основной шрифт — ультра-современный Montserrat */
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -34,13 +32,8 @@
 
         .logo-container {
             max-width: 400px;
-            margin: 0 auto 25px auto;
+            margin: 0 auto 20px auto;
             filter: drop-shadow(0 0 30px rgba(50, 205, 50, 0.25));
-            transition: transform 0.3s ease;
-        }
-
-        .logo-container:hover {
-            transform: scale(1.02);
         }
 
         .logo-container img {
@@ -49,14 +42,13 @@
         }
 
         h1 {
-            /* Премиальный футуристичный шрифт для главных заголовков */
             font-family: 'Syncopate', sans-serif;
             font-weight: 700;
             color: #32cd32;
             font-size: 2.8rem;
             letter-spacing: 5px;
             margin: 10px 0;
-            text-shadow: 3px 3px 0px #000;
+            text-shadow: 0 0 20px rgba(50, 205, 50, 0.5);
             text-transform: uppercase;
         }
 
@@ -66,59 +58,44 @@
             letter-spacing: 4px;
             margin-bottom: 20px;
             text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        /* ОБЩИЙ СТИЛЬ ДЛЯ ЗАГОЛОВКОВ СЕКЦИЙ */
-        .section-title {
-            font-family: 'Syncopate', sans-serif;
             font-weight: 700;
-            color: #ffffff;
-            font-size: 1.3rem;
-            text-transform: uppercase;
-            border-bottom: 2px solid #228b22;
-            padding-bottom: 12px;
-            margin-bottom: 25px;
-            letter-spacing: 3px;
-            width: 100%;
         }
 
-        /* НОВЫЙ БЛОК: VK DOMINATION */
-        .vk-section {
+        /* VK CONTROL BANNER */
+        .vk-banner {
             width: 90%;
             max-width: 1000px;
+            background: linear-gradient(135deg, rgba(0, 119, 255, 0.15), rgba(50, 205, 50, 0.15));
+            border: 2px solid #0077ff;
+            box-shadow: 0 0 25px rgba(0, 119, 255, 0.3), inset 0 0 15px rgba(50, 205, 50, 0.1);
+            padding: 30px;
+            border-radius: 12px;
             text-align: center;
             margin-bottom: 40px;
-        }
-
-        .vk-card {
-            background: linear-gradient(135deg, rgba(26, 43, 26, 0.9), rgba(10, 20, 10, 0.9));
-            border: 2px solid #0077ff; /* Синий неоновый акцент ВК смешанный с зеленым */
-            border-image: linear-gradient(to right, #32cd32, #007aff) 1;
-            padding: 30px;
-            border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            box-sizing: border-box;
             backdrop-filter: blur(8px);
         }
 
-        .vk-status {
+        .vk-title {
+            font-family: 'Syncopate', sans-serif;
+            font-weight: 700;
+            color: #0077ff;
             font-size: 1.5rem;
-            font-weight: 800;
-            color: #007aff;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(0, 122, 255, 0.4);
+            text-shadow: 0 0 10px rgba(0, 119, 255, 0.6);
         }
 
         .vk-text {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #d0e0d0;
-            font-weight: 400;
+            font-size: 1.2rem;
+            color: #e0f0ff;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        /* BLOCK: REPS FROM THE BLOCK */
+        /* GANG SECTION */
         .gang-section {
             width: 90%;
             max-width: 1000px;
@@ -126,31 +103,42 @@
             margin-bottom: 40px;
         }
 
+        .gang-title {
+            font-family: 'Syncopate', sans-serif;
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid #228b22;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            letter-spacing: 3px;
+        }
+
         .gang-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
+            gap: 15px;
         }
 
         .gang-member {
-            background: rgba(10, 20, 10, 0.6);
+            background: rgba(10, 20, 10, 0.7);
             border: 1px solid #228b22;
-            padding: 12px 24px;
+            padding: 14px 28px;
             font-size: 1rem;
-            font-weight: 700;
+            font-weight: 900;
             letter-spacing: 2px;
             text-transform: uppercase;
-            border-radius: 4px;
+            border-radius: 6px;
             transition: all 0.2s ease-in-out;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
         .gang-member:hover {
             background: #32cd32;
             color: #000;
             border-color: #32cd32;
-            box-shadow: 0 0 25px rgba(50, 205, 50, 0.5);
+            box-shadow: 0 0 25px rgba(50, 205, 50, 0.7);
             transform: translateY(-2px);
         }
 
@@ -161,16 +149,16 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            padding: 10px 0 60px 0;
+            padding: 20px 0 60px 0;
         }
 
         .quote-card {
-            background: rgba(10, 18, 10, 0.85);
-            border: 1px solid rgba(50, 205, 50, 0.1);
+            background: rgba(10, 15, 10, 0.85);
+            border: 1px solid rgba(50, 205, 50, 0.2);
             border-left: 5px solid #2e8b57;
             padding: 30px;
-            border-radius: 4px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
             backdrop-filter: blur(6px);
             transition: all 0.3s ease;
         }
@@ -178,72 +166,54 @@
         .quote-card:hover {
             transform: translateY(-4px);
             border-left-color: #32cd32;
-            box-shadow: 0 15px 35px rgba(0, 255, 0, 0.05);
+            box-shadow: 0 15px 30px rgba(50, 205, 50, 0.1);
         }
 
         .quote-text {
             font-size: 1.15rem;
             line-height: 1.6;
-            color: #e5eee5;
+            color: #edf5ed;
             margin-bottom: 20px;
             font-weight: 400;
         }
 
         .quote-author {
-            font-size: 0.85rem;
-            font-weight: 700;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.8rem;
             color: #32cd32;
             text-align: right;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            font-weight: 700;
         }
 
-        /* AUDIO */
+        /* AUDIO SYSTEM WITHOUT EXTRA TEXT */
         .audio-player {
             position: fixed;
             bottom: 25px;
             right: 25px;
-            background: #081008;
+            background: #0a110a;
             border: 1px solid #32cd32;
-            padding: 10px 18px;
+            padding: 12px 20px;
             border-radius: 40px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.8);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.8);
             z-index: 100;
         }
 
-        .player-btn {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            background: #228b22;
-            color: white;
-            border: none;
-            padding: 8px 18px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.2s;
-        }
-
-        .player-btn:hover {
-            background: #32cd32;
-            color: #000;
+        .audio-player audio {
+            height: 30px;
+            width: 200px;
         }
 
         footer {
             margin-top: auto;
-            padding: 25px;
+            padding: 30px;
             color: #405040;
             font-size: 0.8rem;
             text-align: center;
             width: 100%;
-            background: rgba(2, 5, 2, 0.9);
-            border-top: 1px solid rgba(50, 205, 50, 0.05);
+            background: #030703;
+            border-top: 1px solid rgba(50, 205, 50, 0.1);
             letter-spacing: 2px;
-            font-weight: 600;
         }
     </style>
 </head>
@@ -257,19 +227,15 @@
         <div class="subtitle">Loyalty over royalty. Family first.</div>
     </header>
 
-    <!-- НОВЫЙ БЛОК: ВЛАДЕНИЕ БЕСЕДАМИ ВК -->
-    <section class="vk-section">
-        <div class="section-title">VK Chat Domination</div>
-        <div class="vk-card">
-            <div class="vk-status">🔒 ALL CHATS LOCKED DOWN</div>
-            <div class="vk-text">
-                "We own the digital streets, homie. Every major VK chat is run by the Grove family. Nobody talks, nobody moves unless we say so. Fake bustas get kicked on sight. Total control, no exceptions."
-            </div>
-        </section>
+    <!-- VK CONTROL ZONE -->
+    <section class="vk-banner">
+        <div class="vk-title">VK SECTOR CONTROLLED</div>
+        <div class="vk-text">Мы полностью держим и контролируем все беседы в VK. Наш сектор — наши правила.</div>
+    </section>
 
     <!-- GANG MEMBERS -->
     <section class="gang-section">
-        <div class="section-title">Real Soldiers On The Block</div>
+        <div class="gang-title">Real Soldiers On The Block</div>
         <div class="gang-grid">
             <div class="gang-member">Paris</div>
             <div class="gang-member">Kimmy</div>
@@ -302,3 +268,23 @@
             <div class="quote-author">#LOYALTY</div>
         </div>
         <div class="quote-card">
+            <div class="quote-text">"As long as we breathing, this block stays green. Busta-ass bustas better steer clear."</div>
+            <div class="quote-author">#CLEAN_BLOCK</div>
+        </div>
+        <div class="quote-card">
+            <div class="quote-text">"Kings get made in the gutter and broken on strange turf. Hold down your own block."</div>
+            <div class="quote-author">#GROVE_ST_CREW</div>
+        </div>
+    </main>
+
+    <!-- Упрощенный стандартный плеер без глючных скриптов -->
+    <div class="audio-player">
+        <audio controls loop src="https://soundhelix.com"></audio>
+    </div>
+
+    <footer>
+        &copy; 2026 GROVE STREET FAMILY. O.G. STATUS ONLY.
+    </footer>
+
+</body>
+</html>
