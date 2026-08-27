@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROVE STREET FOREVER LIFE</title>
+    <style>
+        body {
+            background-color: #0b140b;
+            color: #ffffff;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://unsplash.com');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            width: 100%;
+        }
+
+        .logo-container {
+            max-width: 450px;
+            margin: 0 auto 20px auto;
+            filter: drop-shadow(0 0 20px rgba(0, 255, 0, 0.4));
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.03);
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        h1 {
+            color: #228b22;
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            margin: 10px 0;
+            text-shadow: 3px 3px 0px #000, 0 0 10px rgba(34, 139, 34, 0.6);
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            font-style: italic;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        /* БЛОК КРУГА БАНДЫ */
+        .gang-section {
+            width: 90%;
+            max-width: 1000px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .gang-title {
+            color: #32cd32;
+            font-size: 2rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid #228b22;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        .gang-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .gang-member {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid #228b22;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .gang-member:hover {
+            background: #228b22;
+            color: #000;
+            font-weight: bold;
+            box-shadow: 0 0 15px #32cd32;
+            transform: scale(1.08);
+        }
+
+        /* Сетка с цитатами */
+        .quotes-container {
+            max-width: 1000px;
+            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px 0 60px 0;
+        }
+
+        .quote-card {
+            background: rgba(15, 30, 15, 0.75);
+            border-left: 6px solid #2e8b57;
+            border-right: 1px solid rgba(46, 139, 87, 0.2);
+            border-top: 1px solid rgba(46, 139, 87, 0.2);
+            border-bottom: 1px solid rgba(46, 139, 87, 0.2);
+            padding: 25px;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-5px);
+            background: rgba(20, 45, 20, 0.85);
+            border-left-color: #32cd32;
+            box-shadow: 0 15px 30px rgba(0, 255, 0, 0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            line-height: 1.4;
+            color: #e0eee0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .quote-author {
+            font-size: 0.9rem;
+            color: #32cd32;
+            text-align: right;
+            letter-spacing: 1px;
+        }
+
+        /* Плеер */
+        .audio-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #111;
+            border: 2px solid #228b22;
+            padding: 10px 15px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            z-index: 100;
+        }
+
+        .player-btn {
+            background: #228b22;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: sans-serif;
+            font-size: 0.8rem;
+        }
+
+        .player-btn:hover {
+            background: #32cd32;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            color: #555;
+            font-size: 0.8rem;
+            text-align: center;
+            width: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="grove_logo.png" alt="Grove Street Logo">
+        </div>
+        <h1>Grove 4 Life</h1>
+        <div class="subtitle">Семья. Улицы. Верность.</div>
+    </header>
+
+    <!-- НОВЫЙ БЛОК: СОСТАВ БАНДЫ -->
+    <section class="gang-section">
+        <div class="gang-title">Элита Района</div>
+        <div class="gang-grid">
+            <div class="gang-member">Kimmy</div>
+            <div class="gang-member">Dimka</div>
+            <div class="gang-member">Roman</div>
+            <div class="gang-member">Egor</div>
+            <div class="gang-member">Emoboy</div>
+            <div class="gang-member">Rei</div>
+            <div class="gang-member">Pumba</div>
+            <div class="gang-member">Bosha</div>
+            <div class="gang-member">Paris</div>
+        </div>
+    </section>
+
+    <!-- Секция высказываний -->
+    <main class="quotes-container">
+        <div class="quote-card">
+            <div class="quote-text">"Зеленый — это не просто цвет банды. Это цвет крови, которая течет в наших жилах на этих улицах."</div>
+            <div class="quote-author">#GROVE_FOREVER</div>
+        </div>
+        <div class="quote-card">
+            <div class="quote-text">"Ты можешь уйти с Гроув Стрит, но Гроув Стрит никогда не уйдет из тебя."</div>
+            <div class="quote-author">#УЛИЧНЫЙ_ЗАКОН</div>
+        </div>
+        <div class="quote-card">
+            <div class="quote-text">"Мы держимся вместе, когда весь мир идет против нас. Семья — это наш щит."</div>
+            <div class="quote-author">#БРАТВА_ИЗ_ГРОУВ</div>
+        </div>
+        <div class="quote-card">
+            <div class="quote-text">"Преданность району проверяется не словами, а делами на блоке."</div>
+            <div class="quote-author">#ВЕРНОСТЬ</div>
+        </div>
+        <div class="quote-card">
+            <div class="quote-text">"Пока мы дышим, наш флаг будет зеленым. Чужакам тут ловить нечего."</div>
+            <div class="quote-author">#ЧИСТЫЙ_БЛОК</div>
+        </div>
+        <div class="quote-card">
+            <div class="quote-text">"Короли рождаются в гетто, а ломаются на чужих улицах. Держи свой район."</div>
+            <div class="quote-author">#KIMMY_AND_CREW</div>
+        </div>
+    </main>
+
+    <div class="audio-player">
+        <span style="font-size: 0.8rem; color: #aaa;">Атмосфера:</span>
+        <button class="player-btn" id="musicBtn">ВКЛ ЗВУК</button>
+        <audio id="bgMusic" loop src="https://soundhelix.com"></audio>
+    </div>
+
+    <footer>
+        &copy; 2026 GROVE STREET FAMILY. ALL RIGHTS RESERVED.
+    </footer>
+
+    <script>
+        const music = document.getElementById('bgMusic');
+        const btn = document.getElementById('musicBtn');
+        btn.addEventListener('click', () => {
+            if (music.paused) {
+                music.play();
+                btn.textContent = 'ВЫКЛ ЗВУК';
+                btn.style.background = '#8b2222';
+            } else {
+                music.pause();
+                btn.textContent = 'ВКЛ ЗВУК';
+                btn.style.background = '#228b22';
+            }
+        });
+    </script>
+</body>
+</html>
