@@ -187,6 +187,7 @@
         }
 
         /* AUDIO SYSTEM WITHOUT EXTRA TEXT */
+                /* AUDIO SYSTEM WITH CONTROLS */
         .audio-player {
             position: fixed;
             bottom: 25px;
@@ -197,11 +198,28 @@
             border-radius: 40px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.8);
             z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .audio-player audio {
-            height: 30px;
-            width: 200px;
+        .player-btn {
+            font-family: 'Syncopate', sans-serif;
+            font-weight: 700;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+
+        .player-btn:hover {
+            opacity: 0.9;
+        }
+
         }
 
         footer {
