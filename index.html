@@ -186,42 +186,6 @@
             font-weight: 700;
         }
 
-        /* AUDIO SYSTEM WITHOUT EXTRA TEXT */
-                /* AUDIO SYSTEM WITH CONTROLS */
-        .audio-player {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: #0a110a;
-            border: 1px solid #32cd32;
-            padding: 12px 20px;
-            border-radius: 40px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.8);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .player-btn {
-            font-family: 'Syncopate', sans-serif;
-            font-weight: 700;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            transition: background 0.2s;
-        }
-
-        .player-btn:hover {
-            opacity: 0.9;
-        }
-
-        }
-
         footer {
             margin-top: auto;
             padding: 30px;
@@ -295,47 +259,15 @@
         </div>
     </main>
 
-    <!-- Упрощенный стандартный плеер без глючных скриптов -->
-    <!-- Музыкальный блок с кнопкой управления -->
-    <div class="audio-player">
-        <span style="font-size: 0.8rem; color: #809080; font-weight: bold; font-family: 'Syncopate', sans-serif; margin-right: 5px;">VIBE:</span>
-        <button class="player-btn" id="musicBtn" style="background: #228b22;">PLAY</button>
-        <audio id="bgMusic" loop src="track.mp3"></audio>
-    </div>
+    <!-- Скрытый плеер с автостартом по первому клику -->
+    <audio id="bgMusic" loop src="track.mp3"></audio>
 
     <script>
-        const music = document.getElementById('bgMusic');
-        const btn = document.getElementById('musicBtn');
-        let started = false;
-
-        // 1. Автостарт при первом клике в ЛЮБОМ месте сайта
         document.addEventListener('click', function() {
-            if (!started) {
-                music.play().then(() => {
-                    btn.textContent = 'MUTE';
-                    btn.style.background = '#8b2222';
-                    started = true;
-                }).catch(e => console.log("Браузер заблокировал старт"));
-            }
+            const audio = document.getElementById('bgMusic');
+            audio.play().catch(function(e) { console.log("Start blocked before user gesture"); });
         }, { once: true });
-
-        // 2. Ручной контроль по кнопке (вкл/выкл в любой момент)
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation(); // чтобы не срабатывал первый клик по документу
-            if (music.paused) {
-                music.play();
-                btn.textContent = 'MUTE';
-                btn.style.background = '#8b2222';
-                started = true;
-            } else {
-                music.pause();
-                btn.textContent = 'PLAY';
-                btn.style.background = '#228b22';
-            }
-        });
     </script>
-
-
 
     <footer>
         &copy; 2026 GROVE STREET FAMILY. O.G. STATUS ONLY.
