@@ -12,7 +12,6 @@
         body {
             background-color: #0b140b;
             color: #ffffff;
-            /* Основной шрифт для всего сайта — супер-читаемый Rubik */
             font-family: 'Rubik', sans-serif;
             margin: 0;
             padding: 0;
@@ -49,7 +48,6 @@
         }
 
         h1 {
-            /* Жирный, массивный шрифт для главного заголовка */
             font-family: 'Rubik Mono One', sans-serif;
             color: #32cd32;
             font-size: 3rem;
@@ -66,6 +64,43 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             font-weight: 700;
+        }
+
+        /* NEW BLOCK: VK TERRITORY CONTROL */
+        .territory-section {
+            width: 90%;
+            max-width: 1000px;
+            background: linear-gradient(145deg, rgba(20, 40, 20, 0.9), rgba(5, 20, 5, 0.9));
+            border: 2px dashed #32cd32;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            margin-bottom: 40px;
+            box-sizing: border-box;
+        }
+
+        .territory-title {
+            font-family: 'Rubik Mono One', sans-serif;
+            color: #ffd700;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        .territory-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #e0eee0;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .vk-highlight {
+            color: #0077ff; /* Цвет VK для акцента */
+            text-shadow: 0 0 10px rgba(0, 119, 255, 0.5);
+            font-weight: 900;
         }
 
         /* BLOCK: REPS FROM THE BLOCK */
@@ -217,7 +252,15 @@
         <div class="subtitle">Loyalty over royalty. Family first.</div>
     </header>
 
-    <!-- GANG MEMBERS (ALL EQUAL) -->
+    <!-- NEW SECTION: VK CHAT DOMINANCE -->
+    <section class="territory-section">
+        <div class="territory-title">🛡️ Cyber Territory Locked</div>
+        <div class="territory-text">
+            We hold down the streets and we run the digital blocks. The main <span class="vk-highlight">VK Chats</span> are fully under Grove custody. Opps and bustas stand no chance inside our servers.
+        </div>
+    </section>
+
+    <!-- GANG MEMBERS -->
     <section class="gang-section">
         <div class="gang-title">Real Soldiers On The Block</div>
         <div class="gang-grid">
@@ -257,36 +300,3 @@
         </div>
         <div class="quote-card">
             <div class="quote-text">"Kings get made in the gutter and broken on strange turf. Hold down your own block."</div>
-            <div class="quote-author">#GROVE_ST_CREW</div>
-        </div>
-    </main>
-
-    <div class="audio-player">
-        <span style="font-size: 0.85rem; color: #90a090; font-weight: bold;">Vibe Check:</span>
-        <button class="player-btn" id="musicBtn">PLAY AUDIO</button>
-        <audio id="bgMusic" loop src="https://soundhelix.com"></audio>
-    </div>
-
-    <footer>
-        &copy; 2026 GROVE STREET FAMILY. O.G. STATUS ONLY.
-    </footer>
-
-    <script>
-        const music = document.getElementById('bgMusic');
-        const btn = document.getElementById('musicBtn');
-        btn.addEventListener('click', () => {
-            if (music.paused) {
-                music.play();
-                btn.textContent = 'MUTE AUDIO';
-                btn.style.background = '#8b2222';
-                btn.style.color = '#fff';
-            } else {
-                music.pause();
-                btn.textContent = 'PLAY AUDIO';
-                btn.style.background = '#228b22';
-                btn.style.color = '#fff';
-            }
-        });
-    </script>
-</body>
-</html>
