@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GROVE STREET FAMILIES - HOMIES ONLY</title>
+    <!-- Подключаем четкие, массивные шрифты из Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #0b140b;
             color: #ffffff;
-            font-family: 'Impact', 'Arial Black', sans-serif;
+            /* Основной шрифт для всего сайта — супер-читаемый Rubik */
+            font-family: 'Rubik', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -16,7 +21,7 @@
             align-items: center;
             min-height: 100vh;
             overflow-x: hidden;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://unsplash.com');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)), url('https://unsplash.com');
             background-size: cover;
             background-attachment: fixed;
         }
@@ -28,14 +33,14 @@
         }
 
         .logo-container {
-            max-width: 450px;
+            max-width: 420px;
             margin: 0 auto 20px auto;
-            filter: drop-shadow(0 0 20px rgba(0, 255, 0, 0.4));
+            filter: drop-shadow(0 0 25px rgba(50, 205, 50, 0.3));
             transition: transform 0.3s ease;
         }
 
         .logo-container:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
 
         .logo-container img {
@@ -44,20 +49,23 @@
         }
 
         h1 {
-            color: #228b22;
-            font-size: 3.5rem;
-            letter-spacing: 2px;
+            /* Жирный, массивный шрифт для главного заголовка */
+            font-family: 'Rubik Mono One', sans-serif;
+            color: #32cd32;
+            font-size: 3rem;
+            letter-spacing: -1px;
             margin: 10px 0;
-            text-shadow: 3px 3px 0px #000, 0 0 10px rgba(34, 139, 34, 0.6);
+            text-shadow: 4px 4px 0px #000;
             text-transform: uppercase;
         }
 
         .subtitle {
-            font-size: 1.2rem;
-            color: #a0a0a0;
-            font-style: italic;
-            letter-spacing: 1px;
+            font-size: 1.1rem;
+            color: #90a090;
+            letter-spacing: 2px;
             margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 700;
         }
 
         /* BLOCK: REPS FROM THE BLOCK */
@@ -69,13 +77,14 @@
         }
 
         .gang-title {
-            color: #32cd32;
-            font-size: 2rem;
+            font-family: 'Rubik Mono One', sans-serif;
+            color: #ffffff;
+            font-size: 1.6rem;
             text-transform: uppercase;
-            border-bottom: 2px solid #228b22;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 0px #000;
+            border-bottom: 3px solid #228b22;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
         }
 
         .gang-grid {
@@ -86,23 +95,24 @@
         }
 
         .gang-member {
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid #228b22;
-            padding: 10px 20px;
+            background: rgba(10, 20, 10, 0.7);
+            border: 2px solid #228b22;
+            padding: 12px 24px;
             font-size: 1.1rem;
+            font-weight: 800;
             letter-spacing: 1px;
             text-transform: uppercase;
-            border-radius: 3px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
         }
 
         .gang-member:hover {
-            background: #228b22;
+            background: #32cd32;
             color: #000;
-            font-weight: bold;
-            box-shadow: 0 0 15px #32cd32;
-            transform: scale(1.08);
+            border-color: #32cd32;
+            box-shadow: 0 0 20px rgba(50, 205, 50, 0.6);
+            transform: translateY(-3px) scale(1.05);
         }
 
         /* QUOTES */
@@ -110,40 +120,39 @@
             max-width: 1000px;
             width: 90%;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             padding: 20px 0 60px 0;
         }
 
         .quote-card {
-            background: rgba(15, 30, 15, 0.75);
-            border-left: 6px solid #2e8b57;
-            border-right: 1px solid rgba(46, 139, 87, 0.2);
-            border-top: 1px solid rgba(46, 139, 87, 0.2);
-            border-bottom: 1px solid rgba(46, 139, 87, 0.2);
-            padding: 25px;
-            border-radius: 4px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            backdrop-filter: blur(5px);
+            background: linear-gradient(145deg, rgba(15, 32, 15, 0.8), rgba(5, 15, 5, 0.8));
+            border: 1px solid rgba(50, 205, 50, 0.15);
+            border-top: 4px solid #2e8b57;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+            backdrop-filter: blur(6px);
             transition: all 0.3s ease;
         }
 
         .quote-card:hover {
-            transform: translateY(-5px);
-            background: rgba(20, 45, 20, 0.85);
-            border-left-color: #32cd32;
-            box-shadow: 0 15px 30px rgba(0, 255, 0, 0.1);
+            transform: translateY(-6px);
+            border-top-color: #32cd32;
+            border-color: rgba(50, 205, 50, 0.3);
+            box-shadow: 0 18px 35px rgba(0, 255, 0, 0.08);
         }
 
         .quote-text {
-            font-size: 1.4rem;
-            line-height: 1.4;
-            color: #e0eee0;
-            margin-bottom: 15px;
-            text-transform: uppercase;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            color: #f0f5f0;
+            margin-bottom: 20px;
+            font-weight: 500;
         }
 
         .quote-author {
+            font-family: 'Rubik Mono One', sans-serif;
             font-size: 0.9rem;
             color: #32cd32;
             text-align: right;
@@ -153,43 +162,48 @@
         /* AUDIO */
         .audio-player {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #111;
-            border: 2px solid #228b22;
-            padding: 10px 15px;
-            border-radius: 30px;
+            bottom: 25px;
+            right: 25px;
+            background: #0f1a0f;
+            border: 2px solid #32cd32;
+            padding: 12px 18px;
+            border-radius: 40px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            gap: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.8);
             z-index: 100;
         }
 
         .player-btn {
+            font-weight: 900;
             background: #228b22;
             color: white;
             border: none;
-            padding: 8px 15px;
+            padding: 8px 18px;
             border-radius: 20px;
             cursor: pointer;
-            font-weight: bold;
-            font-family: sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
         }
 
         .player-btn:hover {
             background: #32cd32;
+            color: #000;
         }
 
         footer {
             margin-top: auto;
-            padding: 20px;
-            color: #555;
-            font-size: 0.8rem;
+            padding: 25px;
+            color: #455045;
+            font-size: 0.85rem;
             text-align: center;
             width: 100%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(3, 8, 3, 0.8);
+            border-top: 1px solid rgba(50, 205, 50, 0.05);
+            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -248,7 +262,7 @@
     </main>
 
     <div class="audio-player">
-        <span style="font-size: 0.8rem; color: #aaa;">Vibe Check:</span>
+        <span style="font-size: 0.85rem; color: #90a090; font-weight: bold;">Vibe Check:</span>
         <button class="player-btn" id="musicBtn">PLAY AUDIO</button>
         <audio id="bgMusic" loop src="https://soundhelix.com"></audio>
     </div>
@@ -265,10 +279,12 @@
                 music.play();
                 btn.textContent = 'MUTE AUDIO';
                 btn.style.background = '#8b2222';
+                btn.style.color = '#fff';
             } else {
                 music.pause();
                 btn.textContent = 'PLAY AUDIO';
                 btn.style.background = '#228b22';
+                btn.style.color = '#fff';
             }
         });
     </script>
